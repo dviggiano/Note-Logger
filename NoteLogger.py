@@ -77,9 +77,7 @@ api.files.params["dsid"] = api.account.family[0].dsid
 
 # TODO allow user to save username and password to .env for future logins
 
-stop = ""
-
-while stop != "y":
+while True:
     folder = select(
         "Opening notes...",
         api.files["com~apple~Notes"].dir(),
@@ -110,9 +108,10 @@ while stop != "y":
         except:
             print("Invalid directory!")
 
-    stop = ""
+    stop = None
 
-    while stop not in ["Y", "n"]:
-        stop = input("Save another note? Y/n  ")
+    while stop not in ["y", "n"]:
+        stop = input("Save another note? Y/n  ").lower()
 
-    stop = stop.lower()
+    if stop == "y":
+        break
