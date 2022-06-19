@@ -102,6 +102,7 @@ while stop != "y":
         try:
             filename = f"{target}/{note}.md"
             file = open(filename, "a")
+            # TODO format contents
             file.write(contents)
             file.close()
             print(f"Saved {note} to {filename}.")
