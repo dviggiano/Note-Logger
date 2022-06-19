@@ -97,7 +97,7 @@ while stop != "y":
     print(contents)
 
     while True:
-        target = input('Write to what directory?\n')
+        target = input("Write to what directory?  ")
 
         try:
             filename = f"{target}/{note}.md"
@@ -112,6 +112,6 @@ while stop != "y":
     stop = ""
 
     while stop not in ["Y", "n"]:
-        stop = input("Save another note? Y/n\n")
+        stop = input("Save another note? Y/n  ")
 
     stop = stop.lower()
