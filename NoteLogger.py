@@ -99,10 +99,11 @@ while True:
 
         try:
             filename = f"{target}/{note}.md"
-            file = open(filename, "a")
-            # TODO format contents
-            file.write(contents)
-            file.close()
+            
+            with open(filename, "a") as file:
+                # TODO format contents
+                file.write(contents)
+                
             print(f"Saved {note} to {filename}.")
             break
         except:
