@@ -42,7 +42,7 @@ while not api:
 if api.requires_2fa:
     print("Two-factor authentication required.")
     result = api.validate_2fa_code(input("Enter the code you received of one of your approved devices:  "))
-    print("Code validation result: %s" % result)
+    print(f"Code validation result:  {result}")
 
     if not result:
         print("Failed to verify security code.")
@@ -51,7 +51,7 @@ if api.requires_2fa:
     if not api.is_trusted_session:
         print("Session is not trusted. Requesting trust...")
         result = api.trust_session()
-        print("Session trust result %s" % result)
+        print(f"Session trust result:  {result}")
 
         if not result:
             print("Failed to request trust. You will likely be prompted for the code again in the coming weeks.")
